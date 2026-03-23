@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus to Corporate (C2C) Club – Chandigarh University</title>
+  <meta name="description" content="The Campus to Corporate (C2C) Club equips students with corporate skills, soft skills, and industry readiness." />
+  <meta property="og:title" content="C2C Club – Chandigarh University" />
+  <meta property="og:description" content="Bridging the gap between campus and corporate." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+<nav class="navbar glass">
+  <div class="container nav-container">
+    <a href="#" class="logo">C2C<span class="dot">.</span></a>
+
+    <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li id="nav-auth-area">
+        <a href="#contact" class="btn btn-primary sm" id="nav-join-btn">Join Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div id="nav-overlay" class="nav-overlay"></div>
+
+<div id="announcement-banner" style="display:none;">
+  <div class="announcement-inner">
+    <span id="announcement-text"></span>
+    <a id="announcement-link" href="#" target="_blank" rel="noopener" style="display:none;"></a>
+    <button id="announcement-dismiss" aria-label="Dismiss">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+</div>
+<header class="hero-section">
+  <div class="hero-bg-glow"></div>
+  <div class="container hero-content">
+    <h1 class="hero-title fade-in-up">
+      Bridge the Gap to <br>
+      <span class="text-gradient">Corporate Success</span>
+    </h1>
+    <p class="hero-subtitle fade-in-up delay-1">
+      Equipping Chandigarh University students with the skills, confidence, and network to thrive in the professional world.
+    </p>
+    <div class="hero-buttons fade-in-up delay-2">
+      <a href="#contact" class="btn btn-primary">Join the Club</a>
+      <a href="#events" class="btn btn-secondary">Upcoming Events</a>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="about-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">About Us</h2>
+      <div class="line"></div>
+    </div>
+    <div class="about-content glass-card fade-in-scroll">
+      <p>The Campus to Corporate (C2C) Club at Chandigarh University is designed to equip students with essential skills for a smooth transition from academic life to the professional world. Through workshops, seminars, and mentorship programs, we focus on bridging the gap between classroom learning and industry expectations.</p>
+      <p>Our mission is to foster holistic development by enhancing soft skills, aptitude, communication, and professional etiquette, ensuring that every student is industry-ready and confident to face corporate challenges.</p>
+    </div>
+  </div>
+</section>
+
+<section id="categories" class="categories-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">What We Focus On</h2>
+      <div class="line"></div>
+    </div>
+    <div class="categories-grid">
+
+      <div class="category-card glass-card hover-lift fade-in-scroll">
+        <div class="icon-box">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+          </svg>
+        </div>
+        <h3>Corporate Skill Development</h3>
+        <p>Training on tools, technologies, and workflows used in top-tier companies.</p>
+      </div>
+
+      <div class="category-card glass-card hover-lift fade-in-scroll delay-1">
+        <div class="icon-box">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h3>Communication &amp; Soft Skills</h3>
+        <p>Mastering public speaking, presentation, and interpersonal communication.</p>
+      </div>
+
+      <div class="category-card glass-card hover-lift fade-in-scroll delay-2">
+        <div class="icon-box">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+        </div>
+        <h3>Industry Readiness</h3>
+        <p>Mock interviews, group discussions, and etiquette training.</p>
+      </div>
+
+      <div class="category-card glass-card hover-lift fade-in-scroll">
+        <div class="icon-box">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" x2="8" y1="13" y2="13"/>
+            <line x1="16" x2="8" y1="17" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <h3>Resume &amp; LinkedIn Building</h3>
+        <p>Crafting impactful resumes and optimizing professional social media profiles.</p>
+      </div>
+
+      <div class="category-card glass-card hover-lift fade-in-scroll delay-1">
+        <div class="icon-box">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-1.66Z"/>
+            <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-1.66Z"/>
+          </svg>
+        </div>
+        <h3>Aptitude &amp; Interview Prep</h3>
+        <p>Problem-solving sessions and logic building for placement exams.</p>
+      </div>
+
+      <div class="category-card glass-card hover-lift fade-in-scroll delay-2">
+        <div class="icon-box">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m11 17 2 2a1 1 0 1 0 3-3"/>
+            <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/>
+            <path d="m21 3 1 11h-1"/>
+            <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/>
+            <path d="M3 4h8"/>
+          </svg>
+        </div>
+        <h3>Professional Networking</h3>
+        <p>Connecting with alumni and industry experts for guidance and opportunities.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="team" class="team-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Our Team</h2>
+      <div class="line"></div>
+    </div>
+
+    <h3 class="subsection-title">Faculty Advisors</h3>
+    <div class="team-grid faculty-grid">
+      <div class="team-card glass-card fade-in-scroll">
+        <div class="team-img-wrapper">
+          <img src="images/ishdeep.jpeg" alt="Dr. Ishdeep Singla"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="avatar-fallback" style="display:none;">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/>
+            </svg>
+          </div>
+        </div>
+        <h4>Dr. Ishdeep Singla</h4>
+        <p class="role">Faculty Advisor</p>
+      </div>
+
+      <div class="team-card glass-card fade-in-scroll delay-1">
+        <div class="team-img-wrapper">
+          <img src="images/navneet.jpeg" alt="Dr. Navneet Kaur"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="avatar-fallback" style="display:none;">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/>
+            </svg>
+          </div>
+        </div>
+        <h4>Dr. Navneet Kaur</h4>
+        <p class="role">Faculty Co-Advisor</p>
+      </div>
+    </div>
+
+    <h3 class="subsection-title">Student Leadership</h3>
+    <div class="team-grid student-grid">
+      <div class="team-card glass-card fade-in-scroll">
+        <div class="team-img-wrapper">
+          <img src="images/sujoy.jpeg" alt="Sujoy Ray"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="avatar-fallback" style="display:none;">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/>
+            </svg>
+          </div>
+        </div>
+        <h4>Sujoy Ray</h4>
+        <p class="role">Secretary</p>
+      </div>
+
+      <div class="team-card glass-card fade-in-scroll delay-1">
+        <div class="team-img-wrapper">
+          <img src="images/drishti pannu.jpeg" alt="Drishti Pannu"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="avatar-fallback" style="display:none;">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/>
+            </svg>
+          </div>
+        </div>
+        <h4>Drishti Pannu</h4>
+        <p class="role">Joint Secretary</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="events" class="events-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Upcoming Events</h2>
+      <div class="line"></div>
+    </div>
+    <div class="events-grid" id="events-grid">
+      <div class="event-skeleton glass-card"></div>
+      <div class="event-skeleton glass-card"></div>
+    </div>
+    <div id="events-admin-bar" style="display:none;text-align:center;margin-top:1.5rem;">
+      <button class="btn btn-primary sm" onclick="openEventModal()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+        Add Event
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Event Gallery</h2>
+      <div class="line"></div>
+    </div>
+    <div class="gallery-grid" id="gallery-grid">
+    </div>
+    <div id="gallery-admin-bar" style="display:none;text-align:center;margin-top:1.5rem;">
+      <button class="btn btn-primary sm" onclick="openGalleryModal()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+        Add Image
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="blog" class="blog-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Latest &amp; Greatest</h2>
+      <div class="line"></div>
+    </div>
+    <div class="blog-grid" id="blog-grid">
+      <div class="blog-skeleton glass-card"></div>
+      <div class="blog-skeleton glass-card"></div>
+      <div class="blog-skeleton glass-card"></div>
+    </div>
+    <div id="blog-admin-bar" style="display:none;text-align:center;margin-top:1.5rem;">
+      <button class="btn btn-primary sm" onclick="openBlogModal()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+        Add Post
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Join C2C Club</h2>
+      <div class="line"></div>
+    </div>
+    <div class="contact-wrapper glass-card fade-in-scroll">
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>Have questions or want to become a member? Fill out the form or reach us directly.</p>
+        <p>
+          <strong style="color:white;">Email:</strong><br>
+          <a href="mailto:c2c.club@cumail.in">c2c.club@cumail.in</a>
+        </p>
+        <p>
+          <strong style="color:white;">Location:</strong><br>
+          Chandigarh University, Punjab
+        </p>
+
+        <div class="contact-social">
+          <a href="https://www.instagram.com/campustocorporatecu/" target="_blank" rel="noopener" class="social-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+            </svg>
+            Instagram
+          </a>
+          <a href="https://www.linkedin.com/in/campus-to-corporate-06662a39b/" target="_blank" rel="noopener" class="social-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect width="4" height="12" x="2" y="9"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="form-link-box">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-primary)">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" x2="8" y1="13" y2="13"/>
+          <line x1="16" x2="8" y1="17" y2="17"/>
+        </svg>
+        <div>
+          <p style="color:white;font-weight:600;margin-bottom:0.25rem;">Membership Form</p>
+          <p style="font-size:0.875rem;">Fill out our Google Form to officially join the C2C Club.</p>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScaMPYSvs_wfZrP37DMpWGKqxzfrgtd2tZbxD6dZJo_m329dQ/viewform" target="_blank" rel="noopener" class="btn btn-primary" style="flex-shrink:0;">
+          Open Form &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container footer-content">
+    <p>
+      &copy; <span id="footer-year"></span> Campus to Corporate (C2C) Club. All rights reserved.<br>
+      Developed by Vishavjeet Singh
+    </p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/campustocorporatecu/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/in/campus-to-corporate-06662a39b/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<div id="lightbox" class="lightbox" role="dialog" aria-label="Image lightbox">
+  <button class="close-lightbox" aria-label="Close">&times;</button>
+  <img class="lightbox-content" id="lightbox-img" alt="">
+</div>
+
+<div class="modal-overlay" id="auth-modal" role="dialog" aria-modal="true" aria-label="Sign in or Register">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+
+    <div class="modal-tabs">
+      <button class="modal-tab active" data-tab="login">Sign In</button>
+      <button class="modal-tab" data-tab="register">Register</button>
+    </div>
+    <div id="tab-login">
+      <div class="form-group">
+        <label for="login-uid">UID</label>
+        <input type="text" id="login-uid" placeholder="e.g. 25BCSXXXXX" autocomplete="username" inputmode="text" />
+      </div>
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password" />
+      </div>
+      <div class="form-error" id="login-error"></div>
+      <button class="btn btn-primary full-width" id="login-btn">Sign In</button>
+    </div>
+    <div id="tab-register" style="display:none;">
+      <div class="form-group">
+        <label for="reg-name">Full Name</label>
+        <input type="text" id="reg-name" placeholder="First & Last name" autocomplete="name" />
+      </div>
+      <div class="form-group">
+        <label for="reg-student-id">UID</label>
+        <input type="text" id="reg-student-id" placeholder="e.g. 25BCSXXXXX" autocomplete="username" />
+        <small style="color:var(--color-text-muted);font-size:0.78rem;margin-top:0.3rem;display:block;">Your university ID — email will be uid@cuchd.in</small>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="reg-year">Year</label>
+          <select id="reg-year">
+            <option value="">Select</option>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+            <option value="4">4th Year</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="reg-branch">Branch</label>
+          <input type="text" id="reg-branch" placeholder="e.g. CSE, ECE" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="reg-password">Password</label>
+        <input type="password" id="reg-password" placeholder="Min. 6 characters" autocomplete="new-password" />
+      </div>
+      <div class="form-error" id="reg-error"></div>
+      <div class="form-success" id="reg-success"></div>
+      <button class="btn btn-primary full-width" id="register-btn">Create Account</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="event-modal">
+  <div class="modal" style="max-width:500px;">
+    <button class="modal-close" onclick="closeEventModal()">&times;</button>
+    <h3 class="modal-title" id="event-modal-title">Add Event</h3>
+    <input type="hidden" id="event-edit-id">
+    <div class="form-group">
+      <label>Event Title</label>
+      <input type="text" id="ev-title" placeholder="e.g. Problem Playground">
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <input type="text" id="ev-desc" placeholder="Short description of the event">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Day</label>
+        <select id="ev-day">
+          <option value="">Day</option>
+          <option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Month</label>
+        <select id="ev-month">
+          <option value="">Month</option>
+          <option value="Jan">Jan</option><option value="Feb">Feb</option><option value="Mar">Mar</option><option value="Apr">Apr</option><option value="May">May</option><option value="Jun">Jun</option><option value="Jul">Jul</option><option value="Aug">Aug</option><option value="Sep">Sep</option><option value="Oct">Oct</option><option value="Nov">Nov</option><option value="Dec">Dec</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Year</label>
+        <select id="ev-year">
+          <option value="">Year</option>
+          <option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Registration Type</label>
+      <select id="ev-reg-type" onchange="toggleFormUrlField('ev-form-url-group')">
+        <option value="website">Website only</option>
+        <option value="form">Google Form only</option>
+        <option value="both">Both (website + form)</option>
+      </select>
+    </div>
+    <div class="form-group" id="ev-form-url-group" style="display:none;">
+      <label>Google Form URL</label>
+      <input type="text" id="ev-form-url" placeholder="https://docs.google.com/forms/...">
+    </div>
+    <div class="form-error" id="ev-error"></div>
+    <button class="btn btn-primary full-width" id="ev-save-btn" onclick="saveEvent()">Save Event</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="gallery-modal">
+  <div class="modal" style="max-width:460px;">
+    <button class="modal-close" onclick="closeGalleryModal()">&times;</button>
+    <h3 class="modal-title" id="gallery-modal-title">Add Image</h3>
+    <input type="hidden" id="gallery-edit-id">
+    <div class="form-group">
+      <label>Image URL or path</label>
+      <input type="text" id="gal-url" placeholder="images/Event1.jpeg or https://...">
+    </div>
+    <div class="form-group">
+      <label>Alt text <span style="color:var(--color-text-muted);font-weight:400;">(describe the image)</span></label>
+      <input type="text" id="gal-alt" placeholder="C2C Club Workshop">
+    </div>
+    <div class="form-group">
+      <label>Caption / Description <span style="color:var(--color-text-muted);font-weight:400;">(optional)</span></label>
+      <input type="text" id="gal-desc" placeholder="e.g. Students at the LinkedIn Lift-Off workshop, Feb 2026">
+    </div>
+    <div id="gal-preview" style="display:none;margin-bottom:1rem;border-radius:10px;overflow:hidden;height:160px;">
+      <img id="gal-preview-img" style="width:100%;height:100%;object-fit:cover;" alt="Preview">
+    </div>
+    <div class="form-error" id="gal-error"></div>
+    <button class="btn btn-primary full-width" id="gal-save-btn" onclick="saveGalleryImage()">Save Image</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="reg-modal">
+  <div class="modal" style="max-width:460px;">
+    <button class="modal-close" onclick="closeRegModal()">&times;</button>
+    <h3 class="modal-title" id="reg-modal-title">Register for Event</h3>
+    <p id="reg-modal-desc" style="color:var(--color-text-muted);font-size:0.9rem;margin-bottom:1.5rem;"></p>
+
+    <div id="reg-both-options" style="display:none;">
+      <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:1rem;">Choose how you'd like to register:</p>
+      <div style="display:flex;flex-direction:column;gap:0.75rem;">
+        <button class="btn btn-primary full-width" id="reg-website-btn" onclick="submitWebsiteReg()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Register via Website
+        </button>
+        <a id="reg-form-btn-both" href="#" target="_blank" rel="noopener" class="btn btn-secondary full-width" style="justify-content:center;margin-left:0;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Open Google Form
+        </a>
+      </div>
+    </div>
+
+    <div id="reg-website-only" style="display:none;">
+      <button class="btn btn-primary full-width" id="reg-website-only-btn" onclick="submitWebsiteReg()">Confirm Registration</button>
+    </div>
+
+    <div class="form-error" id="reg-modal-error"></div>
+    <div class="form-success" id="reg-modal-success"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="blog-modal">
+  <div class="modal" style="max-width:500px;max-height:90dvh;overflow-y:auto;">
+    <button class="modal-close" onclick="closeBlogModal()">&times;</button>
+    <h3 class="modal-title" id="blog-modal-title">Add Blog Post</h3>
+    <input type="hidden" id="blog-edit-id">
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" id="blog-title" placeholder="e.g. 5 Tips to Ace Your Interview">
+    </div>
+    <div class="form-group">
+      <label>Excerpt <span style="color:var(--color-text-muted);font-weight:400;">(short preview shown on homepage)</span></label>
+      <input type="text" id="blog-excerpt" placeholder="Discover the secrets to making a lasting impression...">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Day</label>
+        <select id="blog-day">
+          <option value="">Day</option>
+          <option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Month</label>
+        <select id="blog-month">
+          <option value="">Month</option>
+          <option value="Jan">Jan</option><option value="Feb">Feb</option><option value="Mar">Mar</option><option value="Apr">Apr</option><option value="May">May</option><option value="Jun">Jun</option><option value="Jul">Jul</option><option value="Aug">Aug</option><option value="Sep">Sep</option><option value="Oct">Oct</option><option value="Nov">Nov</option><option value="Dec">Dec</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Year</label>
+        <select id="blog-year">
+          <option value="">Year</option>
+          <option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Image URL <span style="color:var(--color-text-muted);font-weight:400;">(optional)</span></label>
+      <input type="text" id="blog-image-url" placeholder="https://... or images/blog1.jpeg" oninput="updateBlogPreview(this.value)">
+    </div>
+    <div id="blog-img-preview" style="display:none;border-radius:10px;overflow:hidden;height:140px;margin-bottom:1rem;">
+      <img id="blog-img-preview-img" style="width:100%;height:100%;object-fit:cover;" alt="Preview">
+    </div>
+    <div class="form-group">
+      <label>Full Content</label>
+      <textarea id="blog-content" placeholder="Write the full blog post content here..." style="width:100%;min-height:160px;padding:12px 16px;background:rgba(255,255,255,0.05);border:1px solid var(--color-glass-border);border-radius:10px;color:white;font-family:inherit;font-size:0.95rem;resize:vertical;line-height:1.6;" onfocus="this.style.borderColor='var(--color-primary)';this.style.outline='none'" onblur="this.style.borderColor='var(--color-glass-border)'"></textarea>
+    </div>
+    <div class="form-error" id="blog-error"></div>
+    <button class="btn btn-primary full-width" id="blog-save-btn" onclick="saveBlogPost()">Save Post</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

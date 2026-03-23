@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In – C2C Club</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+   .back-link,.divider,.login-subtitle,.switch-mode{text-align:center;color:var(--color-text-muted)}.back-link:hover,.login-logo .dot,.switch-mode button{color:var(--color-primary)}body{display:flex;flex-direction:column;min-height:100vh}.login-page{flex:1;display:flex;align-items:center;justify-content:center;padding:2rem;padding-top:calc(var(--header-height) + 2rem)}.login-box{width:100%;max-width:440px;background:var(--color-glass-bg);border:1px solid var(--color-glass-border);border-radius:20px;padding:2.5rem;backdrop-filter:blur(12px)}@media (max-width:480px){.login-page{padding:1rem;padding-top:calc(var(--header-height) + 1rem);align-items:flex-start}.login-box{padding:1.75rem 1.25rem;border-radius:16px}}.login-logo{text-align:center;margin-bottom:2rem}.login-logo a{font-family:var(--font-heading);font-size:2.2rem;font-weight:800;letter-spacing:-1px}.login-subtitle{font-size:.9rem;margin-bottom:2rem}.back-link{display:block;margin-top:1.5rem;font-size:.875rem}.divider{font-size:.8rem;margin:1.5rem 0;position:relative}.divider::after,.divider::before{content:"";position:absolute;top:50%;width:40%;height:1px;background:var(--color-glass-border)}.divider::before{left:0}.divider::after{right:0}.switch-mode{margin-top:1rem;font-size:.875rem}.switch-mode button{background:0 0;border:none;cursor:pointer;font-size:inherit;font-family:inherit}.switch-mode button:hover{text-decoration:underline}.hero-bg-glow{pointer-events:none}
+  </style>
+</head>
+<body>
+
+<nav class="navbar glass">
+  <div class="container nav-container">
+    <a href="/" class="logo">C2C<span class="dot">.</span></a>
+    <a href="/" class="btn btn-secondary sm">← Back to Home</a>
+  </div>
+</nav>
+
+<div class="hero-bg-glow" style="position:fixed;width:600px;height:600px;background:radial-gradient(circle,rgba(230,0,35,.12) 0%,rgba(0,0,0,0) 70%);top:50%;left:50%;transform:translate(-50%,-50%);z-index:-1;"></div>
+
+<main class="login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="/">C2C<span class="dot">.</span></a>
+    </div>
+
+    <div class="modal-tabs" style="margin-bottom:2rem;">
+      <button class="modal-tab active" data-tab="login">Sign In</button>
+      <button class="modal-tab" data-tab="register">Register</button>
+    </div>
+
+    <div id="tab-login">
+      <p class="login-subtitle">Welcome back to C2C Club</p>
+      <div class="form-group">
+        <label for="login-uid">UID</label>
+        <input type="text" id="login-uid" placeholder="e.g. 24BCS1234" autocomplete="username" inputmode="text" />
+      </div>
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password" />
+      </div>
+      <div class="form-error" id="login-error"></div>
+      <button class="btn btn-primary full-width" id="login-btn">Sign In</button>
+    </div>
+
+    <div id="tab-register" style="display:none;">
+      <p class="login-subtitle">Join the C2C Club community</p>
+      <div class="form-group">
+        <label for="reg-name">Full Name</label>
+        <input type="text" id="reg-name" placeholder="Jane Doe" autocomplete="name" />
+      </div>
+      <div class="form-group">
+        <label for="reg-student-id">UID</label>
+        <input type="text" id="reg-student-id" placeholder="e.g. 24BCS1234" autocomplete="username" />
+        <small style="color:var(--color-text-muted);font-size:0.78rem;margin-top:0.3rem;display:block;">Your university ID — email will be uid@cuchd.in</small>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="reg-year">Year</label>
+          <select id="reg-year">
+            <option value="">Select</option>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+            <option value="4">4th Year</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="reg-branch">Branch</label>
+          <input type="text" id="reg-branch" placeholder="e.g. CSE, ECE, MBA" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="reg-password">Password</label>
+        <input type="password" id="reg-password" placeholder="Min. 6 characters" autocomplete="new-password" />
+      </div>
+      <div class="form-error" id="reg-error"></div>
+      <div class="form-success" id="reg-success"></div>
+      <button class="btn btn-primary full-width" id="register-btn">Create Account</button>
+    </div>
+
+    <a href="/" class="back-link">← Return to homepage</a>
+  </div>
+</main>
+
+<script>
+const modalTabs=document.querySelectorAll(".modal-tab"),tabLogin=document.getElementById("tab-login"),tabRegister=document.getElementById("tab-register");function switchTab(e){modalTabs.forEach((t=>t.classList.toggle("active",t.dataset.tab===e))),tabLogin.style.display="login"===e?"block":"none",tabRegister.style.display="register"===e?"block":"none"}modalTabs.forEach((e=>e.addEventListener("click",(()=>switchTab(e.dataset.tab)))));const showError=(e,t)=>{e.textContent=t,e.classList.add("visible")},hideError=e=>e.classList.remove("visible"),setLoading=(e,t)=>{t?(e.dataset.orig=e.innerHTML,e.innerHTML='<span class="spinner"></span>',e.disabled=!0):(e.innerHTML=e.dataset.orig,e.disabled=!1)};fetch("/api/auth/me").then((e=>{e.ok&&(window.location.href="/")})),document.getElementById("login-btn").addEventListener("click",(async()=>{const e=document.getElementById("login-error");hideError(e);const t=document.getElementById("login-uid").value.trim(),n=document.getElementById("login-password").value;if(!t||!n)return showError(e,"Please fill all fields.");const o=t.toLowerCase()+"@cuchd.in",r=document.getElementById("login-btn");setLoading(r,!0);try{const t=await fetch("/api/auth/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:o,password:n})}),r=await t.json();t.ok?window.location.href="admin"===r.user.role?"/admin":"/":showError(e,r.error)}catch{showError(e,"Network error.")}finally{setLoading(r,!1)}})),document.getElementById("register-btn").addEventListener("click",(async()=>{const e=document.getElementById("reg-error"),t=document.getElementById("reg-success");hideError(e),t.classList.remove("visible");const n=document.getElementById("reg-name").value.trim(),o=document.getElementById("reg-student-id").value.trim(),r=document.getElementById("reg-password").value,a=document.getElementById("reg-year").value,s=document.getElementById("reg-branch").value.trim();if(!n||!o||!r)return showError(e,"Name, UID and password are required.");if(r.length<6)return showError(e,"Password must be 6+ characters.");const i=o.toLowerCase()+"@cuchd.in",d=document.getElementById("register-btn");setLoading(d,!0);try{const d=await fetch("/api/auth/register",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:n,email:i,password:r,studentId:o,year:a,branch:s})}),l=await d.json();d.ok?(t.textContent="Welcome to C2C Club! Redirecting...",t.classList.add("visible"),setTimeout((()=>window.location.href="/"),1500)):showError(e,l.error)}catch{showError(e,"Network error.")}finally{setLoading(d,!1)}}));
+</script>
+</body>
+</html>

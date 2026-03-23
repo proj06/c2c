@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog – C2C Club</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+   body{padding-top:var(--header-height)}.post-wrapper{max-width:780px;margin:0 auto;padding:3rem 5%}.post-error,.post-loading{text-align:center;padding:5rem 0}.post-back{display:flex;align-items:center;gap:.5rem;color:var(--color-text-muted);font-size:.875rem;margin-bottom:2.5rem;transition:color var(--transition-fast);width:100%}.post-back:hover,.post-date,.post-error h2{color:var(--color-primary)}.post-date{display:block;font-size:.875rem;font-weight:600;margin-bottom:.75rem}.post-content,.post-loading{color:var(--color-text-muted)}.post-hero{width:100%;height:280px;border-radius:16px;overflow:hidden;margin-bottom:2.5rem;border:1px solid var(--color-glass-border)}.post-hero img{width:100%;height:100%;object-fit:cover;display:block}.post-no-image{background:var(--color-glass-bg);border:1px solid var(--color-glass-border);border-radius:16px;height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:2.5rem}.post-no-image svg{opacity:.15}.post-title{font-size:2.4rem;font-weight:800;line-height:1.2;margin-bottom:1.5rem}.post-divider{width:60px;height:3px;background:var(--color-primary);border-radius:2px;margin-bottom:2rem}.post-content{font-size:1.05rem;line-height:1.85;white-space:pre-wrap;word-break:break-word}.post-loading .spinner{width:32px;height:32px;margin:0 auto 1rem}.post-error h2{margin-bottom:.5rem}.post-error p{color:var(--color-text-muted);margin-bottom:1.5rem}@media (max-width:768px){.post-hero{height:260px}.post-title{font-size:1.8rem}.post-content{font-size:.97rem}}@media (max-width:480px){.post-wrapper{padding:1.5rem 5%}.post-hero{height:200px;border-radius:12px;margin-bottom:1.75rem}.post-title{font-size:1.5rem}}
+  </style>
+</head>
+<body>
+
+<nav class="navbar glass">
+  <div class="container nav-container">
+    <a href="/" class="logo">C2C<span class="dot">.</span></a>
+    <a href="/#blog" class="btn btn-secondary sm">← Back to Blog</a>
+  </div>
+</nav>
+
+<main class="post-wrapper" id="post-wrapper">
+  <div class="post-loading" id="post-loading">
+    <div class="spinner"></div>
+    <p>Loading post…</p>
+  </div>
+</main>
+
+<script>
+const postId=window.location.pathname.split("/blog/")[1];async function loadPost(){const t=document.getElementById("post-wrapper");if(postId)try{const e=await fetch(`/api/content/blog/${postId}`),o=await e.json();if(!e.ok||!o.post)return void renderError(t,"Post not found",o.error||"This post may have been removed.");renderPost(t,o.post)}catch{renderError(t,"Something went wrong","Could not load the post. Please try again.")}else renderError(t,"Post not found","No post ID in the URL.")}function renderPost(t,e){const o=e.day&&e.month&&e.year?`${e.day} ${e.month}, ${e.year}`:new Date(e.createdAt).toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric",timeZone:"Asia/Kolkata"});document.title=`${e.title} – C2C Club`,t.innerHTML=`\n      <a href="/#blog" class="post-back">\n        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>\n        Back to Blog\n      </a>\n     ${e.imageUrl?`<div class="post-hero"><img src="${esc(e.imageUrl)}" alt="${esc(e.title)}" onerror="this.parentElement.className='post-no-image';this.remove()"></div>`:""}\n      <span class="post-date">${o}</span>\n      <h1 class="post-title">${esc(e.title)}</h1>\n      <div class="post-divider"></div>\n      <div class="post-content">${esc(e.content||e.excerpt)}</div>\n    `}function renderError(t,e,o){t.innerHTML=`\n      <div class="post-error">\n        <h2>${e}</h2>\n        <p>${o}</p>\n        <a href="/#blog" class="btn btn-primary">← Back to Blog</a>\n      </div>`}function esc(t){return t?String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"):""}loadPost();
+</script>
+</body>
+</html>

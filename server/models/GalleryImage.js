@@ -1,0 +1,1 @@
+const mongoose=require("mongoose"),galleryImageSchema=new mongoose.Schema({url:{type:String,required:!0,trim:!0},alt:{type:String,default:"C2C Club Event",trim:!0},description:{type:String,default:"",trim:!0},order:{type:Number,default:0}},{timestamps:!0});module.exports=mongoose.model("GalleryImage",galleryImageSchema);
