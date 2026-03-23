@@ -1,1 +1,70 @@
-require("dotenv").config();const express=require("express"),mongoose=require("mongoose"),cookieParser=require("cookie-parser"),path=require("path"),mongoSanitize=require("express-mongo-sanitize"),rateLimit=require("express-rate-limit"),authRoutes=require("./routes/auth"),adminRoutes=require("./routes/admin"),contentRoutes=require("./routes/content"),{verifyToken:verifyToken,optionalAuth:optionalAuth}=require("./middleware/auth"),app=express(),PORT=process.env.PORT||3e3,authLimiter=rateLimit({windowMs:9e5,max:10,message:{error:"Too many attempts. Please try again in 15 minutes."},standardHeaders:!0,legacyHeaders:!1}),apiLimiter=rateLimit({windowMs:9e5,max:200,message:{error:"Too many requests. Please slow down."},standardHeaders:!0,legacyHeaders:!1});app.use(express.json({limit:"10kb"})),app.use(express.urlencoded({extended:!0,limit:"10kb"})),app.use(cookieParser()),app.use(mongoSanitize()),app.use(((e,i,o)=>{i.setHeader("X-Content-Type-Options","nosniff"),i.setHeader("X-Frame-Options","SAMEORIGIN"),i.setHeader("X-XSS-Protection","1; mode=block"),i.setHeader("Referrer-Policy","strict-origin-when-cross-origin"),o()})),app.use(express.static(path.join(__dirname,"../public"))),mongoose.connect(process.env.MONGODB_URI).then((()=>console.log("✅ MongoDB connected"))).catch((e=>console.error("❌ MongoDB connection error:",e))),app.use("/api/auth",authLimiter,authRoutes),app.use("/api/admin",apiLimiter,verifyToken,adminRoutes),app.use("/api/content",apiLimiter,contentRoutes),app.get("/",optionalAuth,((e,i)=>{i.sendFile(path.join(__dirname,"../public/index.html"))})),app.get("/login",((e,i)=>{i.sendFile(path.join(__dirname,"../public/login.html"))})),app.get("/blog/:id",((e,i)=>{i.sendFile(path.join(__dirname,"../public/blog-post.html"))})),app.get("/admin",verifyToken,((e,i)=>{if("admin"!==e.user.role)return i.status(403).redirect("/login?error=unauthorized");i.sendFile(path.join(__dirname,"../public/admin.html"))})),app.use(((e,i)=>{i.status(404).sendFile(path.join(__dirname,"../public/index.html"))})),app.listen(PORT,(()=>{console.log(`🚀 C2C Club server running at http://localhost:${PORT}`)}));
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
+const path = require("path");
+const mongoSanitize = require("express-mongo-sanitize");
+const rateLimit = require("express-rate-limit");
+
+const authRoutes = require("./routes/auth");
+const adminRoutes = require("./routes/admin");
+const contentRoutes = require("./routes/content");
+const { verifyToken, optionalAuth } = require("./middleware/auth");
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// ─── Middleware ────────────────────────────────────────────────────────────────
+app.use(express.json({ limit: "10kb" }));
+app.use(express.urlencoded({ extended: true, limit: "10kb" }));
+app.use(cookieParser());
+
+// Strip MongoDB operators ($gt, $where, etc.) from all input
+app.use(mongoSanitize());
+
+// Security headers
+app.use((req, res, next) => {
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("X-Frame-Options", "SAMEORIGIN");
+  res.setHeader("X-XSS-Protection", "1; mode=block");
+  res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+  next();
+});
+
+app.use(express.static(path.join(__dirname, "../public")));
+
+// ─── MongoDB Connection ────────────────────────────────────────────────────────
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => console.log("✅ MongoDB connected"))
+  .catch((err) => console.error("❌ MongoDB connection error:", err));
+
+// ─── Routes ───────────────────────────────────────────────────────────────────
+app.use("/api/auth",authRoutes);
+app.use("/api/admin",verifyToken, adminRoutes);
+app.use("/api/content", contentRoutes);
+
+// ─── Page Routes ──────────────────────────────────────────────────────────────
+app.get("/", optionalAuth, (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/login.html"));
+});
+app.get("/blog/:id", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/blog-post.html"));
+});
+app.get("/admin", verifyToken, (req, res) => {
+  if (req.user.role !== "admin") return res.status(403).redirect("/login?error=unauthorized");
+  res.sendFile(path.join(__dirname, "../public/admin.html"));
+});
+
+// ─── 404 Fallback ─────────────────────────────────────────────────────────────
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, "../public/index.html"));
+});
+
+// ─── Start Server ─────────────────────────────────────────────────────────────
+app.listen(PORT, () => {
+  console.log(`🚀 C2C Club server running at http://localhost:${PORT}`);
+});
